@@ -4,10 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>info</title>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>info Table</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th, td {
+                border: 1px solid #000000;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
 </head>
 <body>
     
-    <h3>{{ info }}</h3>
+    <!-- <tbody>
+        {% for item in info %}
+          <tr>
+            <td>{{item}}</td>
+            <br/>
+          </tr>
+        {% endfor %}
+      </tbody> -->
+      <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>password</th>
+                <th>birth_date</th>
+                <th>salary</th>
+                <th>education</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in info %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.password }}</td>
+                <td>{{ item.birth_date }}</td>
+                <td>{{ item.salary }}</td>
+                <td>{{ item.education }}</td>
+               
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+      <h3>to enter another worker click on "add another worker" below</h3>
+    <a href="{{ url_for('form') }}">add another worker</a>
+
+
+        
+
+
+
 
 </body>
 </html>
