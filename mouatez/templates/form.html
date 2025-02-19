@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Form page</h1>    
+    <form action="{{ url_for('submit') }}" method="post">
+        <label for="name">username</label>
+        <input type="text" name="name" id="name">
+
+        <label for="password">password</label>
+        <input type="text" name="password" id="password"/>
+
+        <label for="salary">salary</label>
+        <input type="number" name="salary" id="salary"/>
+
+        <label for="birth_date">birth_date</label>
+        <input type="date" name="birth_date" id="birth_date"/>
+
+        <label for="education">education</label>
+        <input type="text" name="education" id="education"/>
+
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
