@@ -16,5 +16,9 @@ def products(id):
     x = products[int(id)]
     return {"id":x}
 
+@app.route("/login/")
+def login(login):
+    username:
+
 if __name__ == "__main__":
     app.run()
