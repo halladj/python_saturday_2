@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .gitignore
 .venv
 #
 #
+=======
+venv
+>>>>>>> fdf9e2d847d9fb1f58a7ea00b6c1ba60378dac68
