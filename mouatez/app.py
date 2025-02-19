@@ -26,7 +26,7 @@ def submit():
     salary = request.form.get("salary")
     education = request.form.get("education")
     info.append({"name": name, "password": password, "birth_date": birth_date, "salary": salary, "education": education})
-    return info
+    return redirect("/info")
 
 
 @app.route("/product/<id>")
@@ -36,8 +36,9 @@ def products(id):
     return {"id":x} 
 
 @app.route("/info/")
-def info():
-    return render_template("info.html")
+def infopage():
+    print(info)
+    return render_template("info.html", info=info)
 
 if __name__ == "__main__":
     app.run()
