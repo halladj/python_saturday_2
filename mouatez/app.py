@@ -26,6 +26,12 @@ def submit():
     salary = request.form.get("salary")
     education = request.form.get("education")
     info.append({"name": name, "password": password, "birth_date": birth_date, "salary": salary, "education": education})
+    
+    with open('workers.txt', 'a') as file:
+        s=str({"name": name, "password": password, "birth_date": birth_date, "salary": salary, "education": education})
+        s=s+"\n"
+        file.write(s)
+
     return redirect("/info")
 
 
