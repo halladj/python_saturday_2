@@ -1,2 +1,3 @@
 {'name': 'sdgsdf', 'password': 'hhfhf', 'birth_date': '3333-03-31', 'salary': '3888', 'education': 'jgjg'}
 {'name': 'fghgh', 'password': 'hghgh', 'birth_date': '0088-08-08', 'salary': '94949', 'education': 'nffh'}
+{'name': 'hh', 'password': 'hh', 'birth_date': '0002-02-22', 'salary': '22', 'education': 'jjj'}

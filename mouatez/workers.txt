@@ -1,0 +1,2 @@
+{'name': 'dhdh', 'password': 'hdhdh', 'birth_date': '0007-07-07', 'salary': '877', 'education': 'hh'}
+{'name': 'hfhfh', 'password': 'hfhfh', 'birth_date': '0008-08-08', 'salary': '877', 'education': 'hdhfh'}

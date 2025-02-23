@@ -27,7 +27,7 @@ def submit():
     education = request.form.get("education")
     info.append({"name": name, "password": password, "birth_date": birth_date, "salary": salary, "education": education})
     
-    with open('workers.txt', 'a') as file:
+    with open('./mouatez/workers.txt', 'a') as file:
         s=str({"name": name, "password": password, "birth_date": birth_date, "salary": salary, "education": education})
         s=s+"\n"
         file.write(s)
@@ -44,8 +44,14 @@ def products(id):
 @app.route("/info/")
 def infopage():
     print(info)
-    # TODO: load workers from txt file.
     return render_template("info.html", info=info)
 
 if __name__ == "__main__":
+    
+    # TODO: load workers from txt file.
+    with open("./mouatez/workers.txt", "r") as file:
+        for item in file.readlines():
+            d = eval(item)
+            info.append(d)
+        print(info)
     app.run()
