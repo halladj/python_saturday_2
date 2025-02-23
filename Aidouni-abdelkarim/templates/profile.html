@@ -3,6 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>profile</title>
+    <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th, td {
+                border: 1px solid #000000;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
 </head>
 <body>
     <h1>workers</h1>
@@ -36,10 +55,30 @@
 
 
         <button type="submit">engistrer</button>
-        <a href="{{ url_for('ajouter') }}">Ajouter</a>
 
 
 
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>jobs</th>
+                <th>salery</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, item in disc.items() %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.age}}</td>
+                <td>{{ item.jobs}}</td>
+                <td>{{ item.salery }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
     </form>
 </body>

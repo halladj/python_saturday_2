@@ -6,11 +6,12 @@ import json
 
 app = Flask(__name__)
 users= {}
+disc = {}
 
 
 
 
-FILE_NAME= "disc.json"
+FILE_NAME= "./Aidouni-abdelkarim/disc.json"
 FILE_PATH=Path("",FILE_NAME)
 
 
@@ -37,27 +38,30 @@ def prodect(id):
 def submit():
     name=request.form.get("name")
     password=request.form.get("password")
+
     if users.get(name) is None:
         users[name] = password
     if password in users.values():
-        return render_template("profile.html")
+        return render_template("profile.html", disc=disc)
     else:
         return render_template("form.html")
 
 
 @app.route("/profile",methods=["POST"])
-
 def profile():
     name=request.form.get("name")
     age=request.form.get("age")
     jobs=request.form.get("jobs")
     salery=request.form.get("salery")
-    disc = {name: {"name": name, "age": age, "jobs": jobs, "salery": salery}}
+
+    # disc = {name: {"name": name, "age": age, "jobs": jobs, "salery": salery}}
     disc[f"{name}"] ={"name":name,"age":age,"jobs":jobs,"salery":salery}
+
     with open(FILE_PATH, "w") as file:
         json.dump(disc, file)
 
-    return disc
+    return render_template("profile.html", disc = disc)
+
 @app.route("/ajouter/", methods=["POST"])
 def ajouter():
     return render_template("profile.html")
@@ -65,6 +69,8 @@ def ajouter():
 
 
 if __name__ == "__main__":
+    with open(FILE_PATH, "r") as file:
+        disc = json.load(file)
     app.run()
 
 
