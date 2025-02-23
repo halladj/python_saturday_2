@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+</head>
+<body>
+    <h1>workers</h1>
+
+    <form action="{{ url_for('profile') }}" method="post">
+        <label for="name">name</label>
+        <input required
+            type="text"
+            name="name"
+            id="name"
+            placeholder="name"/>
+
+        <label for="age">age</label>
+        <input required
+              type="number"
+              name="age"
+              id="age"
+              placeholder="age"/>
+        <label for="jobs">jobs</label>
+        <input required
+            type="text"
+            name="jobs"
+            id="jobs"
+            placeholder="jobs"/>
+        <label for="salery">salery</label>
+        <input required
+            type="number"
+            name="salery"
+            id="salery"
+            placeholder="salery"/>
+
+
+        <button type="submit">engistrer</button>
+        <a href="{{ url_for('ajouter') }}">Ajouter</a>
+
+
+
+
+    </form>
+</body>
+</html>
