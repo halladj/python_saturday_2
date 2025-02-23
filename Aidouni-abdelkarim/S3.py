@@ -36,6 +36,7 @@
 #
 
 #
+import math
 class SpecialList:
     def __init__(self):
         self.my_list = []
@@ -48,17 +49,31 @@ class SpecialList:
         return False
     def access(self):
         return self.my_list[0]
+    # def max(self):
+    #     for item in self.my_list:
+    #         for item2 in self.my_list:
+    #             if item > item2:
+    #                 return item
     def max(self):
-        for item in self.my_list:
-            for item2 in self.my_list:
-                if item > item2:
-                    return item
-    def min(self):
-        for item in self.my_list:
-            for item2 in self.my_list:
-                if item > item2:
-                    return item2
-                
+        maximum = -math.inf
+        for i in self.my_list:
+            if i > maximum:
+                maximum= i
+        return maximum
+
+    # def min(self):
+    #     for item in self.my_list:
+    #         for item2 in self.my_list:
+    #             if item > item2:
+    #                 return item2
+    def minimum(self):
+        minimum = math.inf
+        for i in self.my_list:
+            if i < minimum:
+                minimum= i
+        return minimum
+
+           
 
 
 alist = SpecialList()

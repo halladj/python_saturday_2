@@ -44,6 +44,7 @@ def products(id):
 @app.route("/info/")
 def infopage():
     print(info)
+    # TODO: load workers from txt file.
     return render_template("info.html", info=info)
 
 if __name__ == "__main__":
